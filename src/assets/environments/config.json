@@ -1,0 +1,8 @@
+{
+  "apiUrl": "https://backend-gah-freightsure.dev2.addinn-group.com/",
+  "url":"http://localhost:4200",
+  "receiverWalletId":"648835de5918ffe19497b65d",
+  "apiUrlKonnectPost":"https://api.preprod.konnect.network/api/v2/payments/init-payment",
+  "apiUrlKonnectGet":"https://api.preprod.konnect.network/api/v2/payments/",
+  "apiodoo" : "https://gah-odoo2-freightsure.addinn.com/"
+}

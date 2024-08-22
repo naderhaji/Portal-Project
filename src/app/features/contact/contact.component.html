@@ -1,0 +1,197 @@
+<section class="testimonial-area">
+  <div class="container">
+    <div class="row justify-content-center"></div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div
+          class="download-area-wrapper"
+          id="contact"
+          style="margin-top: 20px"
+        >
+          <!-- contact area wrapper -->
+          <span class="subtitle">De quoi pensez-vous</span>
+          <h3 class="title">Contactez-nous</h3>
+          <p>
+            Partie concernée aux postulations, demandes personnalisées, et des
+            commentaires.
+          </p>
+          <form
+            [formGroup]="contactForm"
+            id="contact_form_submit"
+            class="contact-form sec-margin"
+            (ngSubmit)="sendContactMail()"
+          >
+            <div
+              *ngIf="
+                contactForm.controls['email'].invalid &&
+                (contactForm.controls['email'].dirty ||
+                  contactForm.controls['email'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="contactForm.controls['email'].errors.required">
+                Il faut entrer l'email.
+              </div>
+              <div *ngIf="contactForm.controls['email'].errors?.email">
+                Email invalide
+              </div>
+            </div>
+            <div
+              *ngIf="
+                contactForm.controls['name'].invalid &&
+                (contactForm.controls['name'].dirty ||
+                  contactForm.controls['name'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="contactForm.controls['phone'].errors.required">
+                Il faut entrer le nom.
+              </div>
+              <div *ngIf="contactForm.controls['phone'].errors.minlength">
+                Le nom doit avoir 5 caractères au minimum
+              </div>
+            </div>
+            <div
+              *ngIf="
+                contactForm.controls['phone'].invalid &&
+                (contactForm.controls['phone'].dirty ||
+                  contactForm.controls['phone'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="contactForm.controls['phone'].errors.required">
+                Il faut entrer le numéro de téléphone.
+              </div>
+              <div *ngIf="contactForm.controls['phone'].errors.minlength">
+                Le numéro de téléphone doit avoir 8 chiffres au minimum
+              </div>
+            </div>
+            <div
+              *ngIf="
+                contactForm.controls['message'].invalid &&
+                (contactForm.controls['message'].dirty ||
+                  contactForm.controls['message'].touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="contactForm.controls['message'].errors.required">
+                Il faut entrer le message.
+              </div>
+              <div *ngIf="contactForm.controls['message'].errors.minlength">
+                Le message est trés court
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="name"
+                    id="uname"
+                    placeholder="Votre Nom"
+                  />
+                </div>
+                <!-- <div
+                  *ngIf="
+                    contactForm.controls['name'].invalid &&
+                    (contactForm.controls['name'].dirty ||
+                      contactForm.controls['name'].touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="contactForm.controls['name'].errors.required">
+                    Il faut entrer le nom.
+                  </div>
+                  <div *ngIf="contactForm.controls['name'].errors.minlength">
+                    Le nom doit avoir 5 caractères au minimum
+                  </div>
+                </div> -->
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="email"
+                    id="email"
+                    placeholder="Votre Email"
+                  />
+                </div>
+                <!-- <div
+                  *ngIf="
+                    contactForm.controls['email'].invalid &&
+                    (contactForm.controls['email'].dirty ||
+                      contactForm.controls['email'].touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="contactForm.controls['email'].errors.required">
+                    Il faut entrer l'email.
+                  </div>
+                  <div *ngIf="contactForm.controls['email'].errors?.email">
+                    Email invalide
+                  </div>
+                </div> -->
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="phone"
+                    id="phone"
+                    placeholder="Votre Numéro de téléphone"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group textarea">
+                  <textarea
+                    name="message"
+                    id="message"
+                    class="form-control"
+                    formControlName="message"
+                    cols="30"
+                    rows="10"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
+                <!-- <div
+                  *ngIf="
+                    contactForm.controls['message'].invalid &&
+                    (contactForm.controls['message'].dirty ||
+                      contactForm.controls['message'].touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="contactForm.controls['message'].errors.required">
+                    Il faut entrer le message.
+                  </div>
+                  <div *ngIf="contactForm.controls['message'].errors.minlength">
+                    Le message est trés court
+                  </div>
+                </div> -->
+                <button
+                  class="submit-btn btn-rounded gd-bg-1"
+                  type="submit"
+                  style="
+                    color: #fff;
+                    background-color: #92C73E;
+                    border-radius: 5px;
+                    float: right;
+                    width: 21%;
+                  "
+                  [disabled]="contactForm.invalid"
+                >
+                  Envoyer
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- //. contact area wrapper -->
+      </div>
+    </div>
+  </div>
+</section>

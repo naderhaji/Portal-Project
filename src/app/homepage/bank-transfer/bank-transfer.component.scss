@@ -1,0 +1,38 @@
+.container-bank-transfer{
+  padding-top: 3.9vh;
+  .logo-freightsure-bt{
+    text-align:center;
+    img{
+      width: 319px;
+      height: 61.797px;
+    }
+  }
+  .body-bt {
+    padding: 8vh 12vw 5vh;
+    .title-bt {
+      color: #4B41D9;
+       font-family: Product Sans;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 29.988px;
+      text-transform: uppercase;
+  }
+  .title-pc {
+    font-family: Product Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.988px;
+    padding: 22px 0px;
+}
+  .text-info-bt {
+      color: #000;
+      font-family: Product Sans;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 29.988px;
+  }
+}
+}

@@ -1,0 +1,7 @@
+{
+  "apiUrl": "${APIURL}",
+  "url":"${URL}",
+  "receiverWalletId":"${RECEIVERWALLETID}",
+  "apiUrlKonnectPost":"${API_URL_KONNECT_POST}",
+  "apiUrlKonnectGet":"${API_URL_KONNECT_GET}"
+}

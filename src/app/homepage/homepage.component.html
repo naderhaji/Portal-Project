@@ -1,0 +1,416 @@
+<p-toast></p-toast>
+<app-navbar></app-navbar>
+
+<!-- header area start  -->
+<app-header></app-header>
+<!-- header area end  -->
+<!-- about us area start -->
+<app-about></app-about>
+<!-- Nos offres -->
+<app-packages></app-packages>
+<!-- how it works area start -->
+<section class="how-it-work-area">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="section-title">
+          <!-- section title -->
+          <h3 class="title">Voulez vous bénéficier de notre système ?</h3>
+        </div>
+        <!-- //. section title -->
+      </div>
+    </div>
+    <div class="row" id="demand">
+      <div class="col-lg-12">
+        <div class="how-it-work-tab-nav">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="account-tab"
+                data-toggle="tab"
+                href="#account"
+                role="tab"
+                aria-controls="account"
+                aria-selected="true"
+                style="border-radius: 8px; padding-top: 6px"
+                (click)="type = 0"
+              >
+                Vous êtes un assureur
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link ml-3"
+                id="settings-tab"
+                data-toggle="tab"
+                href="#settings"
+                role="tab"
+                aria-controls="settings"
+                aria-selected="false"
+                style="border-radius: 8px; padding-top: 6px"
+                (click)="type = 1"
+              >
+                Vous êtes un Transporteur
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content wow slideInUp">
+          <div class="tab-pane fade show active" id="account">
+            <div class="how-it-works-tab-content">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="left-content-area">
+                    <h4 class="title">Merci de remplir le formulaire</h4>
+                    <form
+                      enctype="multipart/form-data"
+                      class="contact-form sec-margin"
+                      [formGroup]="form"
+                    >
+                      <div class="row">
+                        <!-- nom -->
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="Name"
+                              id="nameEntrep"
+                              placeholder="Nom de l'entreprise"
+                              [ngClass]="{
+                                'is-invalid': loading && f['Name'].errors
+                              }"
+                            />
+                            <div
+                              *ngIf="loading && f['Name'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['Name'].errors?.['required']">
+                                Le nom de l'entreprise est obligatoire*
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- nom d'espace -->
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="NameSpace"
+                              id="matricule"
+                              placeholder="Nom d'espace"
+                              [ngClass]="{
+                                'is-invalid': loading && f['NameSpace'].errors
+                              }"
+                            />
+                            <div
+                              *ngIf="loading && f['NameSpace'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['NameSpace'].errors?.['required']">
+                                Le nom d'espace est obligatoire*
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- email -->
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="Email"
+                              id="mail"
+                              placeholder="E-mail"
+                              [ngClass]="{
+                                'is-invalid': loading && f['Email'].errors
+                              }"
+                            />
+                            <div
+                              *ngIf="loading && f['Email'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['Email'].errors?.['required']">
+                                L'email' est obligatoire*
+                              </div>
+
+                              <div *ngIf="f['Email'].errors?.['pattern']">
+                                Format e-mail incorrecte*
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- matricule fiscale -->
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="Kbis_Mf"
+                              id="matricule"
+                              placeholder="Matricule Fiscale"
+                              [ngClass]="{
+                                'is-invalid': loading && f['Kbis_Mf'].errors
+                              }"
+                            />
+                            <div
+                              *ngIf="loading && f['Kbis_Mf'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['Kbis_Mf'].errors?.['required']">
+                                Le Matricule Fiscale est obligatoire*
+                              </div>
+                              <div *ngIf="f['Kbis_Mf'].errors?.['pattern']">
+                                Format incorrect*
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- phone -->
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <div class="select-box">
+                              <div
+                                class="selected-option"
+                                (click)="clickSelectedOption()"
+                              >
+                                <div
+                                  #selected_option
+                                  style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    font-size: 0.75rem;
+                                  "
+                                >
+                                  <span
+                                    class="flag-icon flag-icon-{{ flag }}"
+                                    style="margin-left: 0.5rem"
+                                  ></span>
+                                  +{{ numberCountry }}
+                                </div>
+                                <input
+                                  type="number"
+                                  #input_box
+                                  name="Number"
+                                  formControlName="Number"
+                                  placeholder="Phone Number"
+                                  style="font-size: 1rem"
+                                />
+                              </div>
+                              <div class="options" #select_box>
+                                <ol olEle>
+                                  <li
+                                    class="option"
+                                    *ngFor="let country of phones"
+                                    (click)="selectCountry(country)"
+                                  >
+                                    <div>
+                                      <span
+                                        class="flag-icon flag-icon-{{
+                                          country.code.toLowerCase()
+                                        }}"
+                                      ></span>
+                                      <span class="country-name">{{
+                                        country.name
+                                      }}</span>
+                                    </div>
+                                    +{{ country.phone }}
+                                  </li>
+                                </ol>
+                              </div>
+                            </div>
+                            <div
+                              *ngIf="loading && f['Number'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['Number'].errors?.['required']">
+                                Le numéro de téléphone est obligatoire*
+                              </div>
+                              <div *ngIf="f['Number'].errors?.['pattern']">
+                                Format invalide
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- pays -->
+                        <div class="col-lg-6">
+                          <div class="form-group" style="width: 100%">
+                            <p-dropdown
+                              id="Pays"
+                              formControlName="Pays"
+                              [style]="{ width: '100%' }"
+                              [options]="pays"
+                              optionLabel="name"
+                              placeholder="Choisir un pays"
+                            ></p-dropdown>
+                            <!-- <select
+                              class="form-select"
+                              aria-label="Default select example"
+                              id="Pays"
+                              formControlName="Pays"
+                              [style]="{ width: '100%' }"
+                            >
+                              <option [value]="c.name" *ngFor="let c of pays">
+                                {{ c.name }}
+                              </option>
+                            </select> -->
+                            <!-- <select
+                              class="form-select"
+                              aria-label="Default select example"
+                              class="form-control"
+                              formControlName="Pays"
+                              id="matricule"
+                              placeholder="Pays"
+                              style="height: 50px"
+                              [ngClass]="{
+                                'is-invalid': loading && f['Pays'].errors
+                              }"
+                            >
+                              <option selected>Select a country</option>
+                              <option
+                                value="1"
+                                style="max-height: 150px"
+                                *ngFor="let i of pays"
+                              >
+                                {{ i.name }}
+                              </option>
+                            </select> -->
+
+                            <div
+                              *ngIf="loading && f['Pays'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['Pays'].errors?.['required']">
+                                Le Pays est obligatoire*
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- url site web  -->
+                        <div class="col-lg-12">
+                          <div class="form-group">
+                            <input
+                              type="url"
+                              class="form-control"
+                              formControlName="UrlWebSite"
+                              id="UrlWebSite"
+                              placeholder="URL du site Web"
+                              name="UrlWebSite"
+                            />
+                            <div
+                              *ngIf="loading && f['UrlWebSite'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['UrlWebSite'].errors?.['required']">
+                                L'URL est obligatoire*
+                              </div>
+                              <div *ngIf="f['UrlWebSite'].errors?.['pattern']">
+                                Format d'URL invalide.
+                              </div>
+                            </div>
+                            <!-- <div *ngIf="loading && f['UrlWebSite'].errors" class="invalid-label" >
+                                <div *ngIf="f['UrlWebSite'].errors?.['required']">
+                                  L'url de site web est obligatoire*
+                                </div>
+                              </div> -->
+                          </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                          <div class="files">
+                            <label>Logo de l'entreprise </label>
+                            <input
+                              #enterpriseImg
+                              type="file"
+                              class="form-control"
+                              (change)="uploadFile($event)"
+                              id="Logo"
+                              formControlName="Logo"
+                              [ngClass]="{
+                                'is-invalid': loading && f['Logo'].errors
+                              }"
+                            />
+                            <div
+                              *ngIf="loading && f['Logo'].errors"
+                              class="invalid-label"
+                            >
+                              <div *ngIf="f['Logo'].errors?.['required']">
+                                Le logo est obligatoire*
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                          <button
+                            class="submit-btn btn-rounded"
+                            (click)="sendMethode()"
+                            type="submit"
+                            style="
+                              color: #fff;
+                              background-color: #92c73e;
+                              border-radius: 5px;
+                            "
+                          >
+                            Envoyez
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="right-content-area">
+                    <div class="img-wrapper">
+                      <img
+                        src="../assets/img/formulaire.png"
+                        alt="how it works image"
+                        style="max-width: 100%"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- how it works area end -->
+<app-key-features></app-key-features>
+<app-choose-us></app-choose-us>
+
+<app-contact></app-contact>
+<!-- team member area end -->
+<!-- footer area start -->
+<app-footer></app-footer>
+<!-- back to top area start -->
+<div class="back-to-top">
+  <i class="fas fa-angle-up"></i>
+</div>
+<!-- preloader area start -->
+<!-- <div class="preloader-wrapper" id="preloader">
+  <div class="preloader">
+    <div class="sk-circle">
+      <div class="sk-circle1 sk-child"></div>
+      <div class="sk-circle2 sk-child"></div>
+      <div class="sk-circle3 sk-child"></div>
+      <div class="sk-circle4 sk-child"></div>
+      <div class="sk-circle5 sk-child"></div>
+      <div class="sk-circle6 sk-child"></div>
+      <div class="sk-circle7 sk-child"></div>
+      <div class="sk-circle8 sk-child"></div>
+      <div class="sk-circle9 sk-child"></div>
+      <div class="sk-circle10 sk-child"></div>
+      <div class="sk-circle11 sk-child"></div>
+      <div class="sk-circle12 sk-child"></div>
+    </div>
+  </div>
+</div>
+
+<!-- preloader area end -->

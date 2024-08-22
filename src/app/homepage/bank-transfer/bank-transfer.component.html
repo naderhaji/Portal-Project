@@ -1,0 +1,38 @@
+<div class="container-bank-transfer">
+  <div class="logo-freightsure-bt">
+    <img src="assets/img/payment/logo-freightsure.png" alt="" />
+  </div>
+  <div class="body-bt">
+    <div class="title-bt" >Informations:</div>
+    <div class="text-info-bt" *ngIf="bankTransfer">
+      → Attention, le paiement par virement bancaire entraîne systématiquement
+      un traitement minimum de deux jours. <br />
+      → Virement provenant d'un établissement bancaire domicilié en Tunisie
+      uniquement. <br />
+      → Dès que nous avons la confirmation que la somme due a bien été versée
+      sur le compte, et qu'elle correspond exactement à votre commande, nous
+      activons votre service. <br />
+      Mode opératoire: <br />
+      → 1 - Indiquez la référence suivant sur votre note de virement: "ORDER:
+       {{ orderId }} " <br />
+      dans le champ "libéllé, motif, objet..." de l'opération bancaire. <br />
+      → 2 - Le montant du transfert est : {{ selectedArticleId }} <br />
+      → 3 - Nos coordonnées bancaires : <br />
+      Banque Adresse : <br />
+      Titulaire du compte : ABRIDIA <br />
+      Numéro de compte : 11 111 1 111 111 111111 11 <br />
+      Numero iban: TN59 11 111 1 111 111 111111 Identifiant BIC : CFCTTNTT
+      <br />
+      → 4 - Afin de valider votre paiement, veuillez nous envoyer par email à
+      l'adresse <strong>contact@abridia.com</strong> votre preuve de paiement et
+      indiquer votre N° de BC dans le sujet du mail. Les formats des pièces
+      jointes acceptés sont : .pdf.png .gif .jpg et .bmp (6Mo maximum)
+    </div>
+
+    <div class="title-pc" *ngIf="PaymentCheck">
+      Nous vous remercions de votre intérêt pour nos services. Afin de mieux
+      vous servir, nous vous invitons à vous présenter dans notre local Abridia
+      situé à l'adresse suivante : <strong>Immeuble Akkouri, 2ème étage, bureau N° 7, Rue 2 mars, Tozeur.</strong>
+    </div>
+  </div>
+</div>

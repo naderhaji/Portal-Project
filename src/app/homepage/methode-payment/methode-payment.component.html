@@ -1,0 +1,45 @@
+<div class="container-methode-payment">
+  <div class="image-mp">
+    <img src="assets/img/payment/logo-freightsure.png" alt="">
+  </div>
+
+  <div class="titre">
+    Veuillez Choisir le type de paiement :
+  </div>
+  <div class="list-payment-type">
+    <div class="card-payment" role="button" (click)="changeStatus('paiement en ligne')" [ngClass]="{'card-checked': onlinePayment}">
+      <div class="img-card">
+        <img src="assets/img/payment/CreditCard.png" alt="">
+      </div>
+      <div class="type">
+        Paiement en ligne
+
+      </div>
+    </div>
+    <div class="card-payment" role="button" (click)="changeStatus('virement bancaire')" [ngClass]="{'card-checked': bankTransfer}">
+      <div class="img-card">
+        <img src="assets/img/payment/Bank.png" alt="">
+      </div>
+      <div class="type">
+        Virement Bancaire
+      </div>
+    </div>
+    <div class="card-payment" role="button" (click)="changeStatus('paiement par chèque')"  [ngClass]="{'card-checked': paymentByCheck}">
+      <div class="img-card">
+        <img src="assets/img/payment/Receipt.png" alt="">
+      </div>
+      <div class="type">
+        Paiement par chèque
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-side">
+    <button class="confirmation-btn-mp" (click)="sendChoose()" >
+      Valider
+    </button>
+  </div>
+
+
+
+</div>

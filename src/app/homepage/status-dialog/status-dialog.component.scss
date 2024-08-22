@@ -1,0 +1,37 @@
+.container-status-dialog{
+  padding: 45px;
+  .logo-freight-sd{
+    text-align:center;
+    img{
+      width: 319px;
+      height: 61.797px;
+    }
+  }
+  .body-sd{
+    text-align: center;
+    .img-status{
+      width: 251px;
+      height: 241.687px;
+      margin: 44px;
+    }
+    .title-status {
+      color: #4B41D9;
+      font-family: Poppins;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 33.25px; /* 151.136% */
+      text-transform: uppercase;
+  }
+
+  .details {
+      color: #000;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 33.25px;
+      text-align: justify;
+  }
+  }
+}

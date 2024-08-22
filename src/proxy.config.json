@@ -1,0 +1,10 @@
+{
+  "/odoo": {
+    "target": "https://gah-odoo2-freightsure.addinn.com/",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/odoo": "/api"
+    }
+  }
+}

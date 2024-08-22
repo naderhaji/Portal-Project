@@ -1,0 +1,221 @@
+<!-- <div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let item of getDisplayedItems()">
+      <div class="slide">
+        <div href="#demand" (click)="sendPrice(item)">
+          <div class="single-price-plan-01">
+            <div class="price-header">
+              <div class="price-wrap">
+                <span
+                  class="price"
+                  style="font-size: 18px; font-weight: bold"
+                  >{{ item.name }}</span
+                >
+              </div>
+            </div>
+            <div class="price-body">
+              <ul>
+                <li>-{{ item.description }}</li>
+              </ul>
+            </div>
+            <div class="price-footer"></div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div> -->
+
+<!-- price plan area start -->
+<!--<section class="pricing-plan-area pricing-plan-bg" id="pricing">
+  <div class="container" id="pricing">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="section-title white">-->
+<!-- section title -->
+<!--  <span class="subtitle">Nos Offres</span>
+          <h3 class="title extra">Choisissez votre pack</h3>
+          <p>Grâce à notre plateforme, vous pouvez digitaliser vos processus</p>
+        </div>-->
+<!-- //. section title -->
+<!-- </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <a href="#demand">
+          <div class="single-price-plan-01 wow zoomIn">-->
+<!-- single price plan one -->
+<!-- <div class="price-header">
+              <div class="price-wrap">
+                <span class="price">Souscription en ligne </span>
+              </div>
+            </div>
+            <div class="price-body">
+              <ul>
+                <li>- Signature des contrats</li>
+                <li>- Avis d’aliments</li>
+              </ul>
+            </div>
+            <div class="price-footer"></div>
+          </div>
+        </a> -->
+<!-- //. single price plan one -->
+<!-- </div>
+      <div class="col-lg-4 col-md-6">
+        <a href="#contact">
+          <div class="single-price-plan-01 wow zoomIn">-->
+<!-- single price plan one -->
+<!-- <div class="price-header">
+              <div class="price-wrap">
+                <span class="price"> Gestion des sinistres </span>
+              </div>
+            </div>
+            <div class="price-body">
+              <ul>
+                <li>- Déclaration et réclamations en ligne (blockchain)</li>
+              </ul>
+            </div>
+            <div class="price-footer"></div>
+          </div>
+        </a> -->
+<!-- //. single price plan one -->
+<!-- </div>
+      <div class="col-lg-4 col-md-6">
+        <a href="#contact">
+          <div class="single-price-plan-01 wow zoomIn"> -->
+<!-- single price plan one -->
+<!--  <div class="price-header">
+              <div class="price-wrap">
+                <span class="price">Digitalisation des échanges </span>
+              </div>
+            </div>
+            <div class="price-body">
+              <ul>
+                <li>Avec la douane et le transitaire.</li>
+              </ul>
+            </div>
+            <div class="price-footer"></div>
+          </div>
+        </a>-->
+<!-- //. single price plan one -->
+<!-- </div>
+    </div>
+  </div>
+</section>-->
+
+<!-- price plan area start -->
+<section class="pricing-plan-area pricing-plan-bg" id="pricing">
+  <div class="container" id="pricing">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="section-title white">
+          <!-- section title -->
+          <span class="subtitle">Nos Offres</span>
+          <h3 class="title extra">Choisissez votre pack</h3>
+          <p>Grâce à notre plateforme, vous pouvez digitaliser vos processus</p>
+        </div>
+        <!-- //. section title -->
+      </div>
+    </div>
+    <div>
+      <a href="#demand" #gotodemand>. </a>
+      <div class="wrapper" style="padding: 0px 35px">
+        <a (click)="onArrowClick('left')"> < </a>
+
+        <div class="carousel" #carousel>
+          <!-- <div #firstCard>
+            <div href="#demand" (click)="sendPrice(listPackages[0])">
+              <div class="single-price-plan-01 wow zoomIn">
+                <div class="price-header">
+                  <div class="price-wrap">
+                    <span
+                      class="price"
+                      style="font-size: 18px; font-weight: bold"
+                      >{{ listPackages[0].name }}</span
+                    >
+                  </div>
+                </div>
+                <div class="price-body">
+                  <ul>
+                    <li>-{{ listPackages[0].description }}</li>
+                  </ul>
+                  <ul>
+                    <li>-{{ listPackages[0].list_price }}</li>
+                  </ul>
+                </div>
+                <div class="price-footer"></div>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div #firstCard></div> -->
+
+          <div *ngFor="let item of listPackages; let i = index">
+            <div href="#demand" (click)="sendPrice(item)">
+              <div class="single-price-plan-01 wow zoomIn">
+                <div class="price-header">
+                  <div class="price-wrap">
+                    <span
+                      class="price"
+                      style="font-size: 18px; font-weight: bold"
+                      >{{ item.name }}</span
+                    >
+                  </div>
+                </div>
+                <div class="price-body">
+                  <ul>
+                    <li>-{{ item.description }}</li>
+                  </ul>
+                </div>
+                <div class="price-body">
+                  <ul>
+                    <li>{{ item.list_price }}</li>
+                  </ul>
+                </div>
+                <div class="price-footer"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- //. single price plan one -->
+        </div>
+
+        <a (click)="onArrowClick('right')"> > </a>
+      </div>
+    </div>
+
+    <!-- <div class="row" *ngIf="listPackages">
+      <div class="col-lg-4 col-md-6" *ngFor="let item of getDisplayedItems()">
+        <a href="#demand" (click)="sendPrice(item)">
+          <div class="single-price-plan-01 wow zoomIn">
+            <div class="price-header">
+              <div class="price-wrap">
+                <span
+                  class="price"
+                  style="font-size: 18px; font-weight: bold"
+                  >{{ item.name }}</span
+                >
+              </div>
+            </div>
+            <div class="price-body">
+              <ul>
+                <li>-{{ item.description }}</li>
+              </ul>
+            </div>
+            <div class="price-footer"></div>
+          </div>
+        </a>
+      </div>
+      <div style="margin-top: 10px; margin-left: auto; margin-right: auto">
+        <p-paginator
+          [pageLinkSize]="3"
+          [rows]="itemsPerPage"
+          [totalRecords]="listPackages.length"
+          (onPageChange)="onPageChange($event)"
+        >
+        </p-paginator>
+      </div>
+    </div> -->
+  </div>
+</section>
+<!-- price plan area end -->

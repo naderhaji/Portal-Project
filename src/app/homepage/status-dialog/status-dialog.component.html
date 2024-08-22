@@ -1,0 +1,27 @@
+<div class="container-status-dialog">
+  <div class="logo-freight-sd">
+    <img src="assets/img/payment/logo-freightsure.png" alt="" />
+  </div>
+  <div class="body-sd" *ngIf="status=='fail'">
+    <img src="assets/img/payment/fail-pay.png" alt="" class="img-status" />
+    <!-- <img src="assets/img/payment/success-pay.png" alt="" class="img-status" /> -->
+
+    <div class="title-status" >Problème Détecté : Veuillez Nous Contacter</div>
+    <div class="details">
+      Nous regrettons de vous informer qu'un problème inattendu est survenu.Vous
+      pouvez nous joindre par e-mail à [adresse e-mail de support] ou Vous
+      pouvez également nous appeler au [numéro de téléphone de support].
+    </div>
+  </div>
+
+  <div class="body-sd" *ngIf="status=='success'">
+    <img src="assets/img/payment/success-pay.png" alt="" class="img-status" />
+
+    <div class="title-status" >Votre Abonnement est Activé avec Succès !</div>
+    <div class="details">
+      Félicitations ! Votre inscription a été activée avec succès.
+      Vous recevrez un e-mail contenant tous les détails nécessaires
+      pour commencer à explorer notre service.
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "/odoo": {
+    "target": "${API_ODOO_URL}",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/odoo": "/api"
+    }
+  }
+}

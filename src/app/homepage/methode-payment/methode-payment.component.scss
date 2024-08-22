@@ -1,0 +1,81 @@
+.container-methode-payment {
+  padding: 55px 20px;
+  .image-mp {
+    text-align: center;
+    img {
+      width: 319px;
+      height: 61.797px;
+    }
+  }
+  .titre {
+    color: #3c3c3c;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 33.25px;
+    text-align: center;
+    margin-top: 18px;
+  }
+  .list-payment-type {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  .bottom-side {
+    display: flex;
+    justify-content: center;
+  }
+  .confirmation-btn-mp {
+    border-radius: 5px;
+    background: #4b41d9;
+    border: none;
+    padding: 0px 29px;
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px;
+    text-transform: capitalize;
+    &:focus {
+      border: none !important;
+    }
+  }
+  .card-payment {
+    border-radius: 12.708px;
+    border: 4.236px solid #e0e0e0;
+    background: var(--mono-white, #fff);
+    box-shadow: 0px 4.23605px 8.4721px 0px rgba(0, 0, 0, 0.07);
+    padding: 20px;
+    width: 81%;
+    margin: 11px;
+    cursor: pointer;
+  }
+  .card-checked {
+    border: 4.236px solid #4b41d9;
+    background: var(--mono-white, #fff);
+    box-shadow: 0px 4.23605px 8.4721px 0px rgba(0, 0, 0, 0.07);
+  }
+  .type {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    // text-transform: lowercase;
+  }
+  .img-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+}
